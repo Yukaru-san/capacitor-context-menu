@@ -1,3 +1,4 @@
 export interface ContextMenuPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+    checkProcessTextIntentReceived(): Promise<{ text: string }>;   
+    addListener(eventName: 'processTextReceived', listenerFunc: (text: string) => void): void;
 }
