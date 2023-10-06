@@ -1,6 +1,6 @@
 {
   "name": "capacitor-context-menu",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Allows catching context-menu events (PROCESS_TEXT) from android intentions",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

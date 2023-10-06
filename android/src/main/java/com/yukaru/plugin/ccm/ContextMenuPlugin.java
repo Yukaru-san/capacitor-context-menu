@@ -25,7 +25,6 @@ public class ContextMenuPlugin extends Plugin {
         }
 
         JSObject data = Utils.parseIntentExtras(intent.getExtras());
-        System.out.println(data);
         notifyListeners(PROCESS_TEXT_EVENT, data, true);
     }
 

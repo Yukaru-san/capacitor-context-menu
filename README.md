@@ -9,12 +9,24 @@ npm install capacitor-context-menu
 npx cap sync
 ```
 
+## Manifest
+To use this plugin you need to add the following to your AndroidManifest.xml inside your MainActivity
+
+```xml
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.PROCESS_TEXT" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <data android:mimeType="text/plain" />
+</intent-filter>
+``
+
 ## API
 
 <docgen-index>
 
 * [`checkProcessTextIntentReceived()`](#checkprocesstextintentreceived)
 * [`addListener('processTextReceived', ...)`](#addlistenerprocesstextreceived)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -35,14 +47,22 @@ checkProcessTextIntentReceived() => Promise<{ text: string; }>
 ### addListener('processTextReceived', ...)
 
 ```typescript
-addListener(eventName: 'processTextReceived', listenerFunc: (text: string) => void) => void
+addListener(eventName: 'processTextReceived', listenerFunc: ListenerCallback) => void
 ```
 
-| Param              | Type                                   |
-| ------------------ | -------------------------------------- |
-| **`eventName`**    | <code>'processTextReceived'</code>     |
-| **`listenerFunc`** | <code>(text: string) =&gt; void</code> |
+| Param              | Type                                                          |
+| ------------------ | ------------------------------------------------------------- |
+| **`eventName`**    | <code>'processTextReceived'</code>                            |
+| **`listenerFunc`** | <code><a href="#listenercallback">ListenerCallback</a></code> |
 
 --------------------
+
+
+### Type Aliases
+
+
+#### ListenerCallback
+
+<code>(err: any, ...args: any[]): void</code>
 
 </docgen-api>
